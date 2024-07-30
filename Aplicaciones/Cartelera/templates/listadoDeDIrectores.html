@@ -1,0 +1,71 @@
+{% extends "./plantilla.html" %}
+{% block body %}
+
+<style>
+    .table-bordered > :not(caption) > * > * {
+        border-width: 0 var(--bs-border-width);
+        color: rgb(0, 0, 12);
+    }
+</style>
+
+<br>
+<div class="card">
+    <div class="card-title text-center">
+        <h3><b>Listado de Directores</b></h3>
+    </div>
+</div>  
+<br>
+<div style="text-align: center;">
+    <a href="{% url 'nuevoGenero' %}" class="btn btn-success">Agregar Generos</a>
+</div>
+<table class="table table-bordered table-striped table-hover text-center" id="tbl-generos"> 
+    <thead>
+        <tr>
+            <th style="color: green;">Id del genero</th>
+            <th style="color: green;">Nombre genero</th>
+            <th style="color: green;">Descripcion del genero</th>
+            <th style="color: green;">foto</th>
+            
+
+            <th style="color: green;">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for generoTemporal in generos %}
+        <tr>
+            <td>{{ generoTemporal.id }}</td>
+            <td>{{ generoTemporal.nombre }}</td>
+            <td>{{ generoTemporal.descripcion }}</td>
+
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-success"> 
+ 
+                      </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{{ generoTemporal.foto.url }}" target="_blank">Ver Imagen</a>
+                        <a class="dropdown-item" href="{{ generoTemporal.foto.url }}" download>Descargar Imagen</a>
+                    </div>
+                </div>
+                <img src="{{ generoTemporal.foto.url }}" style="width: 150px;">
+            </td>
+            
+
+            
+            <td>
+                <a href="{% url 'editarGenero' generoTemporal.id %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'eliminarGenero' generoTemporal.id %}" onclick="return confirm('Estas seguro de eliminar?')" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#tbl-generos').DataTable();
+    });
+</script>
+
+{% endblock %}
+x

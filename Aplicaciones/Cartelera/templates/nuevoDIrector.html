@@ -1,0 +1,27 @@
+{% extends "plantilla.html" %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{% url 'guardarGenero'%}" enctype="multipart/form-data" method="post">
+                {% csrf_token%}
+                <label for="">Nombre: <br></label>
+                <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese el nombre del genero">
+                <label for="">Descripcion: <br></label>
+                <textarea name="descripcion" id="descripcion" class="form-control" rows="3" placeholder="Ingrese la descripccion "></textarea><br>
+                <label for=""><b>Fotografica</b></label>
+                <input type="file" name="foto" id="foto" accept="image/*" required class= "form-control">
+                <br>
+                
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'listado_generos' %}">Cancelar</a>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock  %}
