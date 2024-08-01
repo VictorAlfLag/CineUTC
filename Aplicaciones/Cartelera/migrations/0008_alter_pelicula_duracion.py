@@ -38,7 +38,9 @@ def convert_numeric_to_time(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('Cartelera', '0008_pelicula'),
+        ('Cartelera', '0007_pelicula'),
     ]
 
-    operations = [migrations.RunPython(convert_numeric_to_time),]
+    operations = [
+        migrations.RunPython(convert_numeric_to_time),
+    ]
