@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-4&46kp*el+kj8woml$98^&n&189=g#+&qx9ze-v-g_hh3%h3-o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'tesis-cpwu.onrender.com').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'cineutc-sqze.onrender.com').split(',')
 
 
 # Application definition
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Tesis.wsgi.application'
+WSGI_APPLICATION = 'Cine.wsgi.application'
 
 
 # Database

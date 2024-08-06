@@ -22,4 +22,4 @@ services:
         value: cineutc-sqze.onrender.com
 
 
-# set DATABASE_URL=postgresql://dbcine_juv2_user:7kwGiVmgoLZXypNWPRjeklULtMV9eac6@dpg-cqlpk9t6l47c73fj7b2g-a.oregon-postgres.render.com/dbcine_juv2
+# set DATABASE_URL=postgresql://victor:RTuE0lagjTJib2oO11Hqw5u487tMKBIJ@dpg-cqp29qqj1k6c73dbimmg-a.oregon-postgres.render.com/dbtesis_lzq1
