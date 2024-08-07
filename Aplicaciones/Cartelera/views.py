@@ -45,25 +45,6 @@ def guardarGenero(request):
     return redirect('listado_generos')
 
 
-
-def ListadoDirectores(request):
-    #Importacion de la base
-    direcctoresBdd =Director.objects.all()
-
-    return render(request,"listadoDeDIrectores.html",{'director':direcctoresBdd})
-
-def ListadoPeliculas(request):
-
-    peliculasBdd = Pelicula.objects.all()
-    return render(request,"listadoDePeliculas.html",{'peliculas':peliculasBdd})
-
-
-def ListadoPaises(request):
-
-    paisesBdd = Pais.objects.all()
-    return render(request,"listadoDePaises.html",{'pais':paisesBdd})
-
-
 #Renderizando formulario de actualizacion 
 def editarGenero(request,id):
     generoEditar=Genero.objects.get(id=id)
@@ -86,6 +67,25 @@ def procesoActualizarGenero(request):
     generoConsultado.save()
     messages.success(request,"Genero actualizado correctamente")
     return redirect('listado_generos')
+
+
+def ListadoDirectores(request):
+    #Importacion de la base
+    direcctoresBdd =Director.objects.all()
+
+    return render(request,"listadoDeDIrectores.html",{'director':direcctoresBdd})
+
+def ListadoPeliculas(request):
+
+    peliculasBdd = Pelicula.objects.all()
+    return render(request,"listadoDePeliculas.html",{'peliculas':peliculasBdd})
+
+
+def ListadoPaises(request):
+
+    paisesBdd = Pais.objects.all()
+    return render(request,"listadoDePaises.html",{'pais':paisesBdd})
+
 
 
 def procesoActualizarPais(request):
